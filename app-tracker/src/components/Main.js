@@ -42,17 +42,17 @@ class Main extends React.Component {
     return (
       <div className="main">
         <Applications
-          key={data.id}
-          data={data}
-          handleView={this.props.handleView}
-          handleDelete={this.props.handleDelete}
+          // key={data.id}
+          // data={data}
+          // handleView={this.props.handleView}
+          // handleDelete={this.props.handleDelete}
         />
 
         <Form
-          handleCreate={this.handleCreate}
-          handleUpdate={this.handleUpdate}
-          formInput={this.props.formInput}
-          view={this.props.view}
+          // handleCreate={this.handleCreate}
+          // handleUpdate={this.handleUpdate}
+          // formInput={this.props.formInput}
+          // view={this.props.view}
         />
       </div>
     )

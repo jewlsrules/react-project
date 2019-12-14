@@ -6,17 +6,17 @@
 class Application {
   public $id;
   public $user;
-  public $companyName;
-  public $jobTitle;
-  public $jobLink;
-  public $appStatus;
-  public function __construct($id, $user, $companyName, $jobTitle, $jobLink, $appStatus){
+  public $company;
+  public $title;
+  public $link;
+  public $status;
+  public function __construct($id, $user, $companyname, $jobtitle, $link, $appStatus){
     $this->id = $id;
     $this->user = $user;
-    $this->companyName = $companyName;
-    $this->jobTitle = $jobTitle;
-    $this->jobLink = $jobLink
-    $this->appStatus = $appStatus
+    $this->company = $company;
+    $this->title = $title;
+    $this->link = $link
+    $this->status = $status
   }
 }
 
@@ -25,6 +25,7 @@ class Applications {
   //get all applications function
   static function all(){
     $applications = array();
+
     $results = pg_query("SELECT * FROM applications") //getting the information from the database for all applications
     $row_object = pg_fetch_object($results);
 
@@ -32,15 +33,23 @@ class Applications {
       $new_application = new Application(
         intval($row_object->id),
         intval($row_object->user),
-        $row_object->companyName,
-        $row_object->jobTitle,
-        $row_object->$jobLink,
-        $row_object->$appStatus
+        $row_object->company,
+        $row_object->title,
+        $row_object->$link,
+        $row_object->$status
         )
       $applications[] = $new_application;
       $row_object = pg_fetch_object($results)
     }
     return $applications;
+  }
+
+  static function create($application){
+    $query ="INSERT INTO applications (user, company, title, link, status) VALUES ($1, $2, $3, $4, $5)";
+    $query_params = array($application->user, $application->company, $application->title, $application->link, $application->status);
+    pg_query_params($query, $query_params);
+    return self::all();
+
   }
 }
 

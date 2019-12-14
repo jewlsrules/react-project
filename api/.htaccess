@@ -6,3 +6,6 @@ RewriteEngine On
 
 RewriteCond %{REQUEST_METHOD} ^GET$
 RewriteRule ^applications$ controllers/applications.php?action=index
+
+RewriteCond %{REQUEST_METHOD} ^POST$
+RewriteRule ^posts$ controllers/applications.php?action=post

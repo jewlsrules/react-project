@@ -6,6 +6,7 @@ import React from 'react';
 import './App.css';
 
 // components
+import Main from './components/Main.js'
 
 // =============================
 // COMPONENT CLASS

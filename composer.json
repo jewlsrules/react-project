@@ -2,4 +2,8 @@
     "require": {
         "monolog/monolog": "1.0.*"
     }
+
+    "config": {
+      "vendor-dir": "composer_vendor"
+    }
 }

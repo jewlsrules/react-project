@@ -1,6 +1,7 @@
 <?php
 
 //*****once we figure out connecting to the database on heroku, add it here***
+​$dbconn = pg_connect(getenv("DATABASE_URL")); 
 
 // this is the model for the individual application that we're tracking
 class Application {

@@ -19,7 +19,6 @@ class App extends React.Component {
     this.state = {
       view: {
         page: 'home',
-        pageTitle: 'View Your Applications'
       },
       formInputs: {
         companyName: null,
@@ -49,18 +48,20 @@ class App extends React.Component {
     //     break
     //   case 'editApplication':
     //     pageTitle = 'Update Application'
-    //     formInputs = {
-    //       companyName: postData.companyName,
-    //       jobTitle: postData.companyTitle,
-    //       jobLink: postData.jobLink,
-    //       appStatus: postData.appStatus
-    //     }
+        // formInputs = {
+        //   companyName: postData.companyName,
+        //   jobTitle: postData.companyTitle,
+        //   jobLink: postData.jobLink,
+        //   appStatus: postData.appStatus
+        // }
     //     break
     //   default:
     //     break
     // }
     this.setState({
-      viewPage: view,
+      view: {
+        page: view,
+      },
       formInputs: formInputs
     })
   } //  closing for handleView
@@ -73,8 +74,10 @@ class App extends React.Component {
       <div className='container'>
         <h1>Job Application Tracker</h1>
         <nav>
-          <h3>Applications</h3>
-          <h3>Add New Application</h3>
+          <h3 onClick= {()=>{
+            this.handleView('home')}}>Applications</h3>
+          <h3 onClick ={()=>{
+            this.handleView('addApplication')}}>Add New Application</h3>
           <Main
             view={this.state.view}
             handleView={this.handleView}

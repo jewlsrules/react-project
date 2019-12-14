@@ -52,25 +52,27 @@ componentDidMount() {
 // ==============
   render () {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor='user'>user</label>
-        <input type='text' value={this.state.user} id='user' onChange={this.handleChange}/>
+      <div>
+        <h1>this is the form component</h1>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor='user'>user</label>
+          <input type='text' value={this.state.user} id='user' onChange={this.handleChange}/>
 
-        <label htmlFor='companyName'>company name</label>
-        <input type='text' value={this.state.companyName} id='cmpanyName' onChange={this.handleChange}/>
+          <label htmlFor='companyName'>company name</label>
+          <input type='text' value={this.state.companyName} id='cmpanyName' onChange={this.handleChange}/>
 
-        <label htmlFor='jobTitle'>job title</label>
-        <input type='text' value={this.state.jobTitle} id='jobTitle' onChange={this.handleChange}/>
+          <label htmlFor='jobTitle'>job title</label>
+          <input type='text' value={this.state.jobTitle} id='jobTitle' onChange={this.handleChange}/>
 
-        <label htmlFor='jobLink'>job link</label>
-        <input type='text' value={this.state.jobLink} id='jobLink' onChange={this.handleChange}/>
+          <label htmlFor='jobLink'>job link</label>
+          <input type='text' value={this.state.jobLink} id='jobLink' onChange={this.handleChange}/>
 
-        <label htmlFor='appStatus'>app status</label>
-        <input type='text' value={this.state.appStatus} id='appStatus' onChange={this.handleChange}/>
+          <label htmlFor='appStatus'>app status</label>
+          <input type='text' value={this.state.appStatus} id='appStatus' onChange={this.handleChange}/>
 
-        <input type="submit" value="Submit"/>
-      </form>
-
+          <input type="submit" value="Submit"/>
+        </form>
+      </div>
     ) //closing for return
   }
 

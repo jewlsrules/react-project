@@ -41,20 +41,22 @@ class Main extends React.Component {
   render () {
     return (
       <div className="main">
-      <h3>{this.props.view.pageTitle}</h3>
-        <Applications
-          // key={data.id}
-          // data={data}
-          // handleView={this.props.handleView}
-          // handleDelete={this.props.handleDelete}
+      <h3>Main.js Component {this.props.view.pageTitle}</h3>
+      {
+        this.props.view.page === 'home'
+        ? <Applications
+            // key={data.id}
+            // data={data}
+            handleView={this.props.handleView}
+            handleDelete={this.props.handleDelete}
+          />
+        : <Form
+          handleCreate={this.handleCreate}
+          handleUpdate={this.handleUpdate}
+          formInputs={this.props.formInputs}
+          view={this.props.view}
         />
-
-        <Form
-          // handleCreate={this.handleCreate}
-          // handleUpdate={this.handleUpdate}
-          // formInput={this.props.formInput}
-          // view={this.props.view}
-        />
+      }
       </div>
     )
   }

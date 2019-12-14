@@ -84,6 +84,8 @@ class App extends React.Component {
             formInputs={this.state.formInputs}
           />
         </nav>
+        <footer>Created for GA by <a href='https://github.com/ashbrick'>Ashley Brickhouse</a> and <a href='https://github.com/jewlsrules'>Jewls Krueger</a>
+        </footer>
       </div>
     )
   }

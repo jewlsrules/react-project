@@ -40,25 +40,25 @@ class App extends React.Component {
       id: null
     }
     // show the page title depending on the page:
-    switch(view) {
-      case 'home':
-        pageTitle = 'View Your Applications'
-        break
-      case 'addApplication':
-        pageTitle = 'Track a New Application'
-        break
-      case 'editApplication':
-        pageTitle = 'Update Application'
-        formInputs = {
-          companyName: postData.companyName,
-          jobTitle: postData.companyTitle,
-          jobLink: postData.jobLink,
-          appStatus: postData.appStatus
-        }
-        break
-      default:
-        break
-    }
+    // switch(view) {
+    //   case 'home':
+    //     pageTitle = 'View Your Applications'
+    //     break
+    //   case 'addApplication':
+    //     pageTitle = 'Track a New Application'
+    //     break
+    //   case 'editApplication':
+    //     pageTitle = 'Update Application'
+    //     formInputs = {
+    //       companyName: postData.companyName,
+    //       jobTitle: postData.companyTitle,
+    //       jobLink: postData.jobLink,
+    //       appStatus: postData.appStatus
+    //     }
+    //     break
+    //   default:
+    //     break
+    // }
     this.setState({
       viewPage: view,
       formInputs: formInputs

@@ -41,6 +41,7 @@ class Main extends React.Component {
   render () {
     return (
       <div className="main">
+      <h3>{this.props.view.pageTitle}</h3>
         <Applications
           // key={data.id}
           // data={data}

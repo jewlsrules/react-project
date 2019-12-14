@@ -17,7 +17,10 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      viewPage: 'home',
+      view: {
+        page: 'home',
+        pageTitle: 'View Your Applications'
+      },
       formInputs: {
         companyName: null,
         jobTitle: null,
@@ -25,7 +28,7 @@ class App extends React.Component {
         appStatus: null
       }
     }
-  }
+  } // closing for constructor
 
 //need this to manage formInput and page views
   handleView = (view, data) => {
@@ -35,6 +38,31 @@ class App extends React.Component {
       image: '',
       body: '',
       id: null
+    }
+    // show the page title depending on the page:
+    switch(view) {
+      case 'home':
+        pageTitle = 'View Your Applications'
+        break
+      case 'addApplication':
+        pageTitle = 'Track a New Application'
+        break
+      case 'editApplication':
+        pageTitle = 'Update Application'
+        formInputs = {
+          companyName: postData.companyName,
+          jobTitle: postData.companyTitle,
+          jobLink: postData.jobLink,
+          appStatus: postData.appStatus
+        }
+        break
+      default:
+        break
+    }
+    this.setState({
+      viewPage: view,
+      formInputs: formInputs
+    })
   } //  closing for handleView
 
 // ==============
@@ -47,6 +75,11 @@ class App extends React.Component {
         <nav>
           <h3>Applications</h3>
           <h3>Add New Application</h3>
+          <Main
+            view={this.state.view}
+            handleView={this.handleView}
+            formInputs={this.state.formInputs}
+          />
         </nav>
       </div>
     )

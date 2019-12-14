@@ -6,12 +6,23 @@ import React from 'react';
 import './App.css';
 
 // components
+import Main from './components/Main.js'
 
 // =============================
 // COMPONENT CLASS
 // =============================
 
 class App extends React.Component {
+
+//need this to manage formInput and page views
+  handleView = (view, data) => {
+    console.log('handling')
+
+  } //  closing for handleView
+
+// ==============
+// RENDER
+// ==============
   render () {
     return (
       <div className='container'>
@@ -19,7 +30,7 @@ class App extends React.Component {
       </div>
     )
   }
-}
+} //  closing for App component
 
 // =============================
 // EXPORT

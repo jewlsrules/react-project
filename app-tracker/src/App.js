@@ -13,11 +13,28 @@ import Main from './components/Main.js'
 // =============================
 
 class App extends React.Component {
+  //constructor
+  constructor(props){
+    super(props)
+    this.state = {
+      viewPage: 'home',
+      formInputs: {
+        companyName: null,
+        jobTitle: null,
+        jobLink: null,
+        appStatus: null
+      }
+    }
+  }
 
 //need this to manage formInput and page views
   handleView = (view, data) => {
     console.log('handling')
-
+    let formInputs = {
+      name: '',
+      image: '',
+      body: '',
+      id: null
   } //  closing for handleView
 
 // ==============
@@ -26,7 +43,11 @@ class App extends React.Component {
   render () {
     return (
       <div className='container'>
-        <h1>Ashley & Jewls' App</h1>
+        <h1>Job Application Tracker</h1>
+        <nav>
+          <h3>Applications</h3>
+          <h3>Add New Application</h3>
+        </nav>
       </div>
     )
   }

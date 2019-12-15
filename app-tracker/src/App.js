@@ -6,6 +6,7 @@ import React from 'react';
 import './App.css';
 
 // components
+import Menu from './components/Menu.js'
 import Main from './components/Main.js'
 
 // =============================
@@ -41,7 +42,7 @@ class App extends React.Component {
       appStatus: '',
       id: null
     }
-    show the page view depending on the page:
+    //show the page view depending on the page:
     switch(view) {
       case 'home':
         pageTitle = 'View Your Applications'

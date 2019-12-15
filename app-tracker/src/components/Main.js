@@ -18,7 +18,7 @@ class Main extends React.Component {
     this.state = {
       applications: []
     }
-  }
+  } // closing for constructor 
 
 // =============================
 // HANDLERS/FUNCTIONS

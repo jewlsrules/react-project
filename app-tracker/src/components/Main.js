@@ -18,7 +18,7 @@ class Main extends React.Component {
     this.state = {
       applications: []
     }
-  } // closing for constructor 
+  } // closing for constructor
 
 // =============================
 // HANDLERS/FUNCTIONS
@@ -41,22 +41,34 @@ class Main extends React.Component {
   render () {
     return (
       <div className="main">
-      <h3>Main.js Component {this.props.view.pageTitle}</h3>
+      <h3>{this.props.view.pageTitle}</h3>
+
+
+
+      //uncomment after creating data in sql
+      {/*
       {
         this.props.view.page === 'home'
-        ? <Applications
-            // key={data.id}
-            // data={data}
-            handleView={this.props.handleView}
-            handleDelete={this.props.handleDelete}
-          />
+        ? this.state.posts.map((data)=> (
+            <Applications
+              key={data.id}
+              data={data}
+              handleView={this.props.handleView}
+              handleDelete={this.props.handleDelete}
+            />
+          ))
         : <Form
           handleCreate={this.handleCreate}
           handleUpdate={this.handleUpdate}
-          formInputs={this.props.formInputs}
+          formInputs={this.props.formInput}
           view={this.props.view}
         />
       }
+
+      */}
+
+
+
       </div>
     )
   }

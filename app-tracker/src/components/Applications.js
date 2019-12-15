@@ -34,8 +34,10 @@ class Applications extends React.Component {
         <div className="app-buttons">
 
           <ul>
-            <li>edit application</li>
-            <li>delete</li>
+            <li onClick={()=>
+            {this.props.handleView('editApp', this.props.data)}}>edit application</li>
+            <li onClick={()=>
+            {this.props.handleDelete(this.props.data.id)}}>delete</li>
           </ul>
         </div>
         <p>End of application component</p>

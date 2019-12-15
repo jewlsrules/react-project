@@ -46,25 +46,39 @@ class Main extends React.Component {
 
 
       //uncomment after creating data in sql
-      {/*
+
       {
         this.props.view.page === 'home'
+
+      }
+
+      {/* comment this back in after we get database up and running
+
         ? this.state.posts.map((data)=> (
+
+          */}
+
             <Applications
-              key={data.id}
-              data={data}
+              // key={data.id}
+              // data={data}
               handleView={this.props.handleView}
               handleDelete={this.props.handleDelete}
             />
+
+        {/* comment the double paren back in once db up and running
           ))
+
+      */}
+
         : <Form
           handleCreate={this.handleCreate}
           handleUpdate={this.handleUpdate}
           formInputs={this.props.formInput}
           view={this.props.view}
         />
-      }
 
+      {/* comment back in when db up and running
+      }
       */}
 
 

@@ -1,7 +1,7 @@
 <?php
 
 //*****once we figure out connecting to the database on heroku, add it here***
-​$dbconn = pg_connect(getenv("DATABASE_URL")); 
+​$dbconn = pg_connect(getenv("DATABASE_URL"));
 
 // this is the model for the individual application that we're tracking
 class Application {
@@ -11,7 +11,7 @@ class Application {
   public $title;
   public $link;
   public $status;
-  public function __construct($id, $user, $companyname, $jobtitle, $link, $appStatus){
+  public function __construct($id, $user, $companyname, $title, $link, $appStatus){
     $this->id = $id;
     $this->user = $user;
     $this->company = $company;

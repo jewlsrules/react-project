@@ -6,6 +6,7 @@ import React from 'react';
 import './App.css';
 
 // components
+import Menu from './components/Menu.js'
 import Main from './components/Main.js'
 
 // =============================
@@ -19,6 +20,7 @@ class App extends React.Component {
     this.state = {
       view: {
         page: 'home',
+        pageTitle: null
       },
       formInputs: {
         companyName: null,
@@ -32,35 +34,38 @@ class App extends React.Component {
 //need this to manage formInput and page views
   handleView = (view, data) => {
     console.log('handling')
+    let pageTitle = ''
     let formInputs = {
-      name: '',
-      image: '',
-      body: '',
+      companyName: '',
+      jobTitle: '',
+      jobLink: '',
+      appStatus: '',
       id: null
     }
-    // show the page title depending on the page:
-    // switch(view) {
-    //   case 'home':
-    //     pageTitle = 'View Your Applications'
-    //     break
-    //   case 'addApplication':
-    //     pageTitle = 'Track a New Application'
-    //     break
-    //   case 'editApplication':
-    //     pageTitle = 'Update Application'
-        // formInputs = {
-        //   companyName: postData.companyName,
-        //   jobTitle: postData.companyTitle,
-        //   jobLink: postData.jobLink,
-        //   appStatus: postData.appStatus
-        // }
-    //     break
-    //   default:
-    //     break
-    // }
+    //show the page view depending on the page:
+    switch(view) {
+      case 'home':
+        pageTitle = 'View Your Applications'
+        break
+      case 'addApplication':
+        pageTitle = 'Track a New Application'
+        break
+      case 'editApplication':
+        pageTitle = 'Update Application'
+        formInputs = {
+          companyName: data.companyName,
+          jobTitle: data.companyTitle,
+          jobLink: data.jobLink,
+          appStatus: data.appStatus
+        }
+        break
+      default:
+        break
+    }
     this.setState({
       view: {
         page: view,
+        pageTitle: pageTitle
       },
       formInputs: formInputs
     })
@@ -72,12 +77,16 @@ class App extends React.Component {
   render () {
     return (
       <div className='container'>
+        <Menu handleView={this.handleView}/>
         <h1>Job Application Tracker</h1>
         <nav>
-          <h3 onClick= {()=>{
+
+        //commented this out so we could pull the menu in instead
+          {/*<h3 onClick= {()=>{
             this.handleView('home')}}>Applications</h3>
           <h3 onClick ={()=>{
-            this.handleView('addApplication')}}>Add New Application</h3>
+            this.handleView('addApplication')}}>Add New Application</h3>*/}
+
           <Main
             view={this.state.view}
             handleView={this.handleView}

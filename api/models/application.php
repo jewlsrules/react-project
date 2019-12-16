@@ -1,8 +1,8 @@
 <?php
 
 //*****once we figure out connecting to the database on heroku, add it here***
-// ​$dbconn = pg_connect(getenv("DATABASE_URL"));
-$dbconn = pg_connect("host=localhost dbname=app_tracker");
+​$dbconn = pg_connect(getenv("DATABASE_URL")); //to see db in heroku
+// $dbconn = pg_connect("host=localhost dbname=app_tracker"); //added when talking to Matt, to see stuff locally
 
 // this is the model for the individual application that we're tracking
 class Application {

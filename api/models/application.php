@@ -56,8 +56,8 @@ class Applications {
         intval($row_object->user_id),
         $row_object->company_name,
         $row_object->job_title,
-        $row_object->$job_link,
-        $row_object->$app_status
+        $row_object->job_link,
+        $row_object->app_status
       );
       $applications[] = $new_application;
       $row_object = pg_fetch_object($results);

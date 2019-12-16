@@ -24,11 +24,12 @@ class Applications extends React.Component {
       <h3>This is the Application Component</h3>
 
         <div className="app-info">
-          {/* }{this.props.data.user}
+          {/*  */}
+          {this.props.data.user}
           {this.props.data.companyName}
           {this.props.data.jobTitle}
           {this.props.data.jobLink}
-          {this.props.data.appStatus} */}
+          {this.props.data.appStatus}
         </div>
 
         <div className="app-buttons">

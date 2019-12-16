@@ -31,7 +31,7 @@ class Application {
   public $title;
   public $link;
   public $status;
-  public function __construct($id, $user, $companyname, $title, $link, $appStatus){
+  public function __construct($id, $user, $company, $title, $link, $status){
     $this->id = $id;
     $this->user = $user;
     $this->company = $company;

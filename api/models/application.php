@@ -66,8 +66,8 @@ class Applications {
   }
 
   static function create($application){
-    $query ="INSERT INTO applications (user, company, title, link, status) VALUES ($1, $2, $3, $4, $5)";
-    $query_params = array($application->user, $application->company, $application->title, $application->link, $application->status);
+    $query ="INSERT INTO applications (user_id, company_name, job_title, app_link, app_status) VALUES ($1, $2, $3, $4, $5)";
+    $query_params = array($application->user_id, $application->company_name, $application->job_title, $application->job_link, $application->app_status);
     pg_query_params($query, $query_params);
     return self::all();
 

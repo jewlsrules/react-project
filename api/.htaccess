@@ -9,3 +9,6 @@ RewriteRule ^applications$ controllers/applications.php?action=index
 
 RewriteCond %{REQUEST_METHOD} ^POST$
 RewriteRule ^applications$ controllers/applications.php?action=post
+
+RewriteCond %{REQUEST_METHOD} ^PUT$
+RewriteRule ^applications/([0-9]+)$ controllers/applications.php?action=update&id=$1

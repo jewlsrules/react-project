@@ -1,7 +1,8 @@
 <?php
 
 //*****once we figure out connecting to the database on heroku, add it here***
-​$dbconn = pg_connect(getenv("DATABASE_URL"));
+​$dbconn = pg_connect(getenv("DATABASE_URL")); //to see db in heroku
+// $dbconn = pg_connect("host=localhost dbname=app_tracker"); //added when talking to Matt, to see stuff locally
 
 // this is the model for the individual application that we're tracking
 class Application {
@@ -16,8 +17,8 @@ class Application {
     $this->user = $user;
     $this->company = $company;
     $this->title = $title;
-    $this->link = $link
-    $this->status = $status
+    $this->link = $link;
+    $this->status = $status;
   }
 }
 
@@ -27,7 +28,7 @@ class Applications {
   static function all(){
     $applications = array();
 
-    $results = pg_query("SELECT * FROM applications") //getting the information from the database for all applications
+    $results = pg_query("SELECT * FROM applications"); //getting the information from the database for all applications
     $row_object = pg_fetch_object($results);
 
     while($row_object){ //while there's a result object...
@@ -38,9 +39,9 @@ class Applications {
         $row_object->title,
         $row_object->$link,
         $row_object->$status
-        )
+      );
       $applications[] = $new_application;
-      $row_object = pg_fetch_object($results)
+      $row_object = pg_fetch_object($results);
     }
     return $applications;
   }

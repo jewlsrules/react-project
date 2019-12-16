@@ -66,11 +66,24 @@ class Applications {
   }
 
   static function create($application){
-    $query ="INSERT INTO applications (user_id, company_name, job_title, app_link, app_status) VALUES ($1, $2, $3, $4, $5)";
+    $query ="INSERT INTO applications (user_id, company_name, job_title, job_link, app_status) VALUES ($1, $2, $3, $4, $5)";
     $query_params = array($application->user_id, $application->company_name, $application->job_title, $application->job_link, $application->app_status);
     pg_query_params($query, $query_params);
     return self::all();
+  }
 
+  static function update($updated_app){
+    $query = "UPDATE applications SET user_id = $1, company_name = $2, job_title = $3, app_link = $4, app_status = $5 WHERE id = $6";
+    $query_params = array($updated_app->user_id, $updated_app->company_name, $updated_app->job_title, $updated_app->job_link, $updated_app->app_status, $updated_app->id);
+    $result = pg_query_params($query, $query_params);
+    return self::all();
+  }
+
+  static function delete($id){
+    $query = "DELETE FROM applications WHERE id = $1";
+    $query_params = array($id);
+    $result = pg_query_params($query, $query_params);
+    return self::all();
   }
 }
 

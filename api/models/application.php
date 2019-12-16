@@ -26,18 +26,18 @@ if(getenv('DATABASE_URL')){
 // this is the model for the individual application that we're tracking
 class Application {
   public $id;
-  public $user;
-  public $company;
-  public $title;
-  public $link;
-  public $status;
-  public function __construct($id, $user, $company, $title, $link, $status){
+  public $user_id;
+  public $company_name;
+  public $job_title;
+  public $job_link;
+  public $app_status;
+  public function __construct($id, $user_id, $company_name, $job_title, $job_link, $app_status){
     $this->id = $id;
-    $this->user = $user;
-    $this->company = $company;
-    $this->title = $title;
-    $this->link = $link;
-    $this->status = $status;
+    $this->user_id = $user_id;
+    $this->company_name = $company_name;
+    $this->job_title = $job_title;
+    $this->job_link = $job_link;
+    $this->app_status = $app_status;
   }
 }
 
@@ -53,11 +53,11 @@ class Applications {
     while($row_object){ //while there's a result object...
       $new_application = new Application(
         intval($row_object->id),
-        intval($row_object->user),
-        $row_object->company,
-        $row_object->title,
-        $row_object->$link,
-        $row_object->$status
+        intval($row_object->user_id),
+        $row_object->company_name,
+        $row_object->job_title,
+        $row_object->$job_link,
+        $row_object->$app_status
       );
       $applications[] = $new_application;
       $row_object = pg_fetch_object($results);

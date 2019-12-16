@@ -12,3 +12,6 @@ RewriteRule ^applications$ controllers/applications.php?action=post
 
 RewriteCond %{REQUEST_METHOD} ^PUT$
 RewriteRule ^applications/([0-9]+)$ controllers/applications.php?action=update&id=$1
+
+RewriteCond %{REQUEST_METHOD} ^DELETE$
+RewriteRule ^applications/([0-9]+)$ controllers/applications.php?action=delete&id=$1

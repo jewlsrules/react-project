@@ -74,7 +74,7 @@ class Applications {
 
   static function update($updated_app){
     $query = "UPDATE applications SET user_id = $1, company_name = $2, job_title = $3, app_link = $4, app_status = $5 WHERE id = $6";
-    $query_params = array($updated_app->user_id, $updated_app->company_name, $updated_app->job_title, $updated_app->job_link, $updated_app->app_status);
+    $query_params = array($updated_app->user_id, $updated_app->company_name, $updated_app->job_title, $updated_app->job_link, $updated_app->app_status, $updated_app->id);
     $result = pg_query_params($query, $query_params);
     return self::all();
   }
